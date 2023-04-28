@@ -1,0 +1,117 @@
+html {
+    height: 100%;
+    background: rgb(0, 0, 0);
+    display: grid;
+    place-items: center;
+    color: #fff;
+}
+
+
+body {
+    font-family: "Nunito", sans-serif;
+
+}
+
+.box {
+    --border-size: 3px;
+    --border-angle: 0turn;
+    width: 500px;
+    height: 500px;
+    background-image: conic-gradient(from var(--border-angle),
+            rgb(0, 0, 0),
+            rgb(0, 0, 0) 50%,
+            rgb(0, 0, 0)),
+        conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+    background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 2)),
+        cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    animation: bg-spin 5s linear infinite;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+@keyframes bg-spin {
+    to {
+        --border-angle: 1turn;
+    }
+}
+
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+
+
+.box img {
+    width: 40%;
+}
+
+
+
+.counter h6 {
+    font-size: 68px;
+    margin: 0px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.counter h3 {
+    font-size: 88PX;
+    margin-top: 8px;
+    margin-bottom: -25px;
+    text-align: center;
+}
+
+.h3-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#big-hand {
+
+    animation: big-hand 8s linear infinite;
+    transform-origin: center;
+
+}
+
+@keyframes big-hand {
+    form {
+        transform: rotateZ(0deg);
+        
+    }
+
+    to {
+        transform: rotateZ(360deg);
+        
+    }
+}
+
+#short-hand{
+
+    animation: short-hand 16s linear infinite;
+    transform-origin: center;
+}
+
+
+@keyframes short-hand {
+    form {
+        transform: rotateZ(0deg);
+        
+    }
+
+    to {
+        transform: rotateZ(360deg);
+        
+    }
+}
